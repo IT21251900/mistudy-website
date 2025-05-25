@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiStudy - Your personalized study companion</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="">
+    <div class="animated-bg"></div>
+    <div>
+        <header class="sticky top-0 inset-x-0 z-50 bg-white shadow">
+            <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+                <div class="flex lg:flex-1">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <!-- <span class="sr-only">Your Company</span> -->
+                        <img class="h-8 w-auto" src="assets/img/mi logo light.png" alt="">
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button id="open-menu" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-5">
+                    <a href="#domain" class="nav-link text-sm/6 font-semibold text-gray-900">Domain</a>
+                    <a href="#milestones" class="nav-link text-sm/6 font-semibold text-gray-900">Milestones</a>
+                    <a href="#documents" class="nav-link text-sm/6 font-semibold text-gray-900">Documents</a>
+                    <a href="#slides" class="nav-link text-sm/6 font-semibold text-gray-900">Slides of past presentations</a>
+                    <a href="#about" class="nav-link text-sm/6 font-semibold text-gray-900">About us</a>
+                    <a href="#contact" class="nav-link text-sm/6 font-semibold text-gray-900">Contact us</a>
+                </div>
+                <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+                </div> -->
+            </nav>
+            <!-- Mobile menu, show/hide based on menu open state. -->
+            <div id="mobile-menu" class="lg:hidden hidden" role="dialog" aria-modal="true">
+                <!-- Background backdrop, show/hide based on slide-over state. -->
+                <div class="fixed inset-0 z-50"></div>
+                <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="-m-1.5 p-1.5">
+                            <span class="sr-only">Your Company</span>
+                            <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                        </a>
+                        <button id="close-menu" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                            <span class="sr-only">Close menu</span>
+                            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mt-6 flow-root">
+                        <div class="-my-6 divide-y divide-gray-500/10">
+                            <div class="space-y-2 py-6">
+                                <a href="#domain" class="nav-link -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Domain</a>
+                                <a href="#milestones" class="nav-link -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Milestones</a>
+                                <a href="#documents" class="nav-link -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Documents</a>
+                                <a href="#slides" class="nav-link -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Slides of past presentations</a>
+                                <a href="#about" class="nav-link -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About us</a>
+                                <a href="#contact" class="nav-link -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact us</a>
+                            </div>
+                            <!-- <div class="py-6">
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="relative isolate px-6 pt-14 lg:px-8">
+            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+                <div class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+            </div>
+            <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+                <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                    <div class="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                        Your personalized study companion. 
+                        <!-- <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a> -->
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h1 class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">Adaptive Learner-Centric Learning Management System</h1>
+                    <p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-md/9">This project explores how AI and advanced technologies can enhance student engagement, personalize learning experiences, and optimize cognitive performance. Dive into our journey toward a smarter, more adaptive education system.</p>
+                    <div class="mt-10 flex items-center justify-center gap-x-6">
+                        <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Go to Product</a>
+                        <a href="#domain" class="text-sm/6 font-semibold text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+                <div class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+            </div>
+        </div>
+        <main class="mt-32 space-y-32">
+            <section id="domain" class=" flex flex-col items-center justify-center">
+                <div>
+                    <div class="container mx-auto px-4">
+                        <div class="text-center mb-10">
+                            <h2 class="text-3xl font-bold text-gray-800">Research Domain</h2>
+                            <p class="mt-2 text-gray-600">Understanding the landscape of our research regarding ASD.</p>
+                        </div>
+
+                        <div x-data="{ selected: 1 }" class="space-y-4 max-w-4xl mx-auto">
+                            <!-- Accordion Item 1 -->
+                            <div class="border border-gray-300 rounded-lg overflow-hidden">
+                                <button @click="selected === 1 ? selected = null : selected = 1" class="flex items-center w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition">
+                                    <i class="bi bi-book text-lg mr-2"></i>
+                                    <span class="text-gray-800 font-semibold">Literature Survey</span>
+                                </button>
+                                <div x-show="selected === 1" x-collapse class="px-6 py-4 bg-white text-gray-600">
+                                    Our survey highlights:
+
+                                    Traditional LMS limitations: rigidity, lack of personalization, static content.
+                                    
+                                    The emergence of AI in education: adaptive learning, intelligent tutoring systems, stealth assessments.
+                                    
+                                    Cognitive strategies like the Pomodoro technique, mind mapping, and cognitive load theory.
+                                    
+                                    Gaps in integrating real-time feedback, dynamic quizzes, and intelligent session tracking.
+                                </div>
+                            </div>
+
+                            <!-- Accordion Item 2 -->
+                            <div class="border border-gray-300 rounded-lg overflow-hidden">
+                                <button @click="selected === 2 ? selected = null : selected = 2" class="flex items-center w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition">
+                                    <i class="bi bi-search text-lg mr-2"></i>
+                                    <span class="text-gray-800 font-semibold">Research Gap</span>
+                                </button>
+                                <div x-show="selected === 2" x-collapse class="px-6 py-4 bg-white text-gray-600">
+                                    [Explain the identified research gap concerning ASD children. What specific areas need more exploration or new approaches?]
+                                </div>
+                            </div>
+
+                            <!-- Accordion Item 3 -->
+                            <div class="border border-gray-300 rounded-lg overflow-hidden">
+                                <button @click="selected === 3 ? selected = null : selected = 3" class="flex items-center w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition">
+                                    <i class="bi bi-question-circle text-lg mr-2"></i>
+                                    <span class="text-gray-800 font-semibold">Research Problem</span>
+                                </button>
+                                <div x-show="selected === 3" x-collapse class="px-6 py-4 bg-white text-gray-600 space-y-2">
+                                    The lack of knowledge among peers and parents surrounding autism means misguidance, poor support, and barriers to socialization for the autistic child...
+                                </div>
+                            </div>
+
+                            <!-- Accordion Item 4 -->
+                            <div class="border border-gray-300 rounded-lg overflow-hidden">
+                                <button @click="selected === 4 ? selected = null : selected = 4" class="flex items-center w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition">
+                                    <i class="bi bi-bullseye text-lg mr-2"></i>
+                                    <span class="text-gray-800 font-semibold">Research Objectives</span>
+                                </button>
+                                <div x-show="selected === 4" x-collapse class="px-6 py-4 bg-white text-gray-600 space-y-3">
+                                    <ul class="list-decimal ml-5 space-y-2">
+                                        <li>
+                                            <strong>Understand How Autistic Children Learn</strong> – LearnMate aims to deeply understand how autistic children take in, process, and act on information across four domains...
+                                        </li>
+                                        <li>
+                                            <strong>Design Personalized Learning Plans</strong> – Using behavioral data and engagement tracking...
+                                        </li>
+                                        <li>
+                                            <strong>Support Differentiated Instruction</strong> – Teachers and caregivers receive targeted tools...
+                                        </li>
+                                        <li>
+                                            <strong>Ensure Flexibility Across Environments</strong> – LearnMate's plans are modular and portable...
+                                        </li>
+                                        <li>
+                                            <strong>Empower and Train Educators</strong> – Teachers get the training and technology they need...
+                                        </li>
+                                        <li>
+                                            <strong>Respect the Rights and Dignity of Children</strong> – All interventions are child-centered...
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Accordion Item 5 -->
+                            <div class="border border-gray-300 rounded-lg overflow-hidden">
+                                <button @click="selected === 5 ? selected = null : selected = 5" class="flex items-center w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition">
+                                    <i class="bi bi-gear text-lg mr-2"></i>
+                                    <span class="text-gray-800 font-semibold">Methodology</span>
+                                </button>
+                                <div x-show="selected === 5" x-collapse class="px-6 py-4 bg-white text-gray-600">
+                                    [Describe the research methodology. Will you be working with children, educators, parents? What methods will be used for data collection and analysis specific to ASD research?]
+                                </div>
+                            </div>
+
+                            <!-- Accordion Item 6 -->
+                            <div class="border border-gray-300 rounded-lg overflow-hidden">
+                                <button @click="selected === 6 ? selected = null : selected = 6" class="flex items-center w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition">
+                                    <i class="bi bi-code-slash text-lg mr-2"></i>
+                                    <span class="text-gray-800 font-semibold">Technologies Used</span>
+                                </button>
+                                <div x-show="selected === 6" x-collapse class="px-6 py-4 bg-white text-gray-600">
+                                    [List and briefly explain any specific technologies, software, or assessment tools relevant to your ASD research project.]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section id="milestones" class=" flex flex-col items-center justify-center">
+                <div>
+                    <div class="container mx-auto px-4">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl font-bold mb-2">Milestones</h2>
+                            <p class="text-gray-600">Timeline in Brief</p>
+                        </div>
+
+                        <div class="relative border-l-4 border-blue-500 pl-6 space-y-12">
+                            <!-- Helper: Set cumulativeProgress manually -->
+                            <!-- Cumulative Progress = previousTotal + current -->
+                            <!-- Total: 6+6+10+18+2+3+19+20 = 84% -->
+                            <!-- We'll pretend it's normalized to 100% for full bar -->
+
+                            <!-- Item 1 -->
+                            <div>
+                                <p class="text-sm text-gray-500">March 2021</p>
+                                <h4 class="text-xl font-semibold text-blue-600">Project Proposal</h4>
+                                <p class="text-gray-600 mb-2">A Project Proposal is presented to potential sponsors or clients to receive funding or get your project approved.</p>
+                                <p class="text-sm font-medium text-gray-700">Marks Allocated: 6 (6%)</p>
+                                <div class="relative w-full bg-gray-200 h-3 rounded">
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-600 rounded" style="width: 6%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div>
+                                <p class="text-sm text-gray-500">June 2021</p>
+                                <h4 class="text-xl font-semibold text-blue-600">Progress Presentation I</h4>
+                                <p class="text-gray-600 mb-2">Reviews the 50% completion status of the project to uncover design/requirement gaps.</p>
+                                <p class="text-sm font-medium text-gray-700">Marks Allocated: 6 (6%)</p>
+                                <div class="relative w-full bg-gray-200 h-3 rounded">
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-300 rounded z-10" style="width: 6%"></div>
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-600 rounded" style="width: 12%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div>
+                                <p class="text-sm text-gray-500">July 2021</p>
+                                <h4 class="text-xl font-semibold text-blue-600">Research Paper</h4>
+                                <p class="text-gray-600 mb-2">Describes your contribution to existing knowledge and acknowledges prior work.</p>
+                                <p class="text-sm font-medium text-gray-700">Marks Allocated: 10 (10%)</p>
+                                <div class="relative w-full bg-gray-200 h-3 rounded">
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-300 rounded z-10" style="width: 12%"></div>
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-600 rounded" style="width: 22%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div>
+                                <p class="text-sm text-gray-500">September 2021</p>
+                                <h4 class="text-xl font-semibold text-blue-600">Progress Presentation II</h4>
+                                <p class="text-gray-600 mb-2">90% completion demo and Poster Presentation summarizing the whole project.</p>
+                                <p class="text-sm font-medium text-gray-700">Marks Allocated: 18 (18%)</p>
+                                <div class="relative w-full bg-gray-200 h-3 rounded">
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-300 rounded z-10" style="width: 22%"></div>
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-600 rounded" style="width: 40%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Item 5 -->
+                            <div>
+                                <p class="text-sm text-gray-500">October 2021</p>
+                                <h4 class="text-xl font-semibold text-blue-600">Website Assessment</h4>
+                                <p class="text-gray-600 mb-2">The Website promotes and documents the entire research project.</p>
+                                <p class="text-sm font-medium text-gray-700">Marks Allocated: 2 (2%)</p>
+                                <div class="relative w-full bg-gray-200 h-3 rounded">
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-300 rounded z-10" style="width: 40%"></div>
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-600 rounded" style="width: 42%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Item 6 -->
+                            <div>
+                                <p class="text-sm text-gray-500">November 2021</p>
+                                <h4 class="text-xl font-semibold text-blue-600">Logbook</h4>
+                                <p class="text-gray-600 mb-2">Validates ongoing project status with entries and status documents.</p>
+                                <p class="text-sm font-medium text-gray-700">Marks Allocated: 3 (3%)</p>
+                                <div class="relative w-full bg-gray-200 h-3 rounded">
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-300 rounded z-10" style="width: 42%"></div>
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-600 rounded" style="width: 45%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Item 7 -->
+                            <div>
+                                <p class="text-sm text-gray-500">November 2021</p>
+                                <h4 class="text-xl font-semibold text-blue-600">Final Report</h4>
+                                <p class="text-gray-600 mb-2">Evaluates the completed project and includes individual, group, and final report components.</p>
+                                <p class="text-sm font-medium text-gray-700">Marks Allocated: 19 (19%)</p>
+                                <div class="relative w-full bg-gray-200 h-3 rounded">
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-300 rounded z-10" style="width: 45%"></div>
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-600 rounded" style="width: 64%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Item 8 -->
+                            <div>
+                                <p class="text-sm text-gray-500">November 2021</p>
+                                <h4 class="text-xl font-semibold text-blue-600">Final Presentation & Viva</h4>
+                                <p class="text-gray-600 mb-2">Individually assesses each member's contribution to the project.</p>
+                                <p class="text-sm font-medium text-gray-700">Marks Allocated: 20 (20%)</p>
+                                <div class="relative w-full bg-gray-200 h-3 rounded">
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-300 rounded z-10" style="width: 64%"></div>
+                                    <div class="absolute left-0 top-0 h-3 bg-blue-600 rounded" style="width: 84%"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section id="documents" class=" flex flex-col items-center justify-center">
+                <div>
+                    <div class="container mx-auto px-4">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl font-bold text-gray-800">Documents</h2>
+                            <p class="text-gray-600 mt-2">Access our key project documentation.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                            <!-- Document Card -->
+                            <div class="bg-white shadow rounded-lg p-6 flex items-start space-x-4">
+                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v2.25A2.25 2.25 0 0117.25 18.75H6.75A2.25 2.25 0 014.5 16.5v-9A2.25 2.25 0 016.75 5.25h2.75m3.25 0h4a2 2 0 012 2v2m0 0l-6 6m6-6V9m0 0H12">
+                                    </path>
+                                </svg>
+                                <div>
+                                    <h5 class="text-lg font-semibold text-gray-800">Topic Assessment Form</h5>
+                                    <p class="text-sm text-green-600 mb-2">Completed</p>
+                                    <a href="documents/TAF_24-25J-209.pdf" download="Topic_Assesment_Form.pdf" class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
+                                        Download
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Document Card -->
+                            <div class="bg-white shadow rounded-lg p-6 flex items-start space-x-4">
+                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 3.75h15a.75.75 0 01.75.75v15a.75.75 0 01-.75.75h-15a.75.75 0 01-.75-.75v-15a.75.75 0 01.75-.75zM9 6.75v10.5M15 6.75v10.5">
+                                    </path>
+                                </svg>
+                                <div>
+                                    <h5 class="text-lg font-semibold text-gray-800">Proposal Document</h5>
+                                    <p class="text-sm text-green-600 mb-2">Completed</p>
+                                    <a href="documents/Project_Proposal.pdf" download="Proposal_Document.pdf" class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
+                                        Download
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Document Card -->
+                            <div class="bg-white shadow rounded-lg p-6 flex items-start space-x-4">
+                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.25v13.5M8.25 12h7.5M12 8.25v7.5M3.75 5.25h16.5v13.5H3.75z">
+                                    </path>
+                                </svg>
+                                <div>
+                                    <h5 class="text-lg font-semibold text-gray-800">Check List Documents</h5>
+                                    <p class="text-sm text-green-600 mb-2">Completed</p>
+                                    <a href="documents/Check_List_Documents.zip" download="Checklist_Documents.zip" class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
+                                        Download
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Document Card -->
+                            <div class="bg-white shadow rounded-lg p-6 flex items-start space-x-4">
+                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75h9a.75.75 0 01.75.75v15a.75.75 0 01-.75.75h-9a.75.75 0 01-.75-.75V4.5a.75.75 0 01.75-.75zM9 7.5h6M9 12h6M9 16.5h6">
+                                    </path>
+                                </svg>
+                                <div>
+                                    <h5 class="text-lg font-semibold text-gray-800">Final Reports</h5>
+                                    <p class="text-sm text-green-600 mb-2">Completed</p>
+                                    <a href="documents/Final_reports.zip" download="Final_Reports.zip" class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
+                                        Download
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Document Card -->
+                            <div class="bg-white shadow rounded-lg p-6 flex items-start space-x-4">
+                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3.75h10.5a.75.75 0 01.75.75v15a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75v-15a.75.75 0 01.75-.75zM9 6.75h6M9 12h6M9 16.5h3">
+                                    </path>
+                                </svg>
+                                <div>
+                                    <h5 class="text-lg font-semibold text-gray-800">Research Paper</h5>
+                                    <p class="text-sm text-green-600 mb-2">Completed</p>
+                                    <a href="documents/Enhancing Cognitive and Metacognitive Domains of Autistic Children using Machine Learning .pdf" download="Research_Paper.pdf" class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
+                                        Download
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section id="slides" class="n flex flex-col items-center justify-center">
+                <div class="">
+                    <div class="container mx-auto px-4">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl font-bold text-gray-800">Presentations</h2>
+                            <p class="text-gray-600 mt-2">Slides from our key project presentations.</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <!-- Card -->
+                            <div class="bg-gray-50 shadow rounded-lg p-6 text-center flex flex-col items-center">
+                                <i class="bi bi-easel text-4xl text-blue-600 mb-3"></i>
+                                <h5 class="text-lg font-semibold text-gray-800">Proposal Presentation</h5>
+                                <p class="text-sm text-gray-500">09-08-2024</p>
+                                <a href="presentations/Proposal_pPesentation.pdf" download="Proposal_Slides.pdf" class="mt-3 inline-block px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">
+                                    Download Slides
+                                </a>
+                            </div>
+
+                            <!-- Card -->
+                            <div class="bg-gray-50 shadow rounded-lg p-6 text-center flex flex-col items-center">
+                                <i class="bi bi-easel2 text-4xl text-blue-600 mb-3"></i>
+                                <h5 class="text-lg font-semibold text-gray-800">Progress Presentation 1</h5>
+                                <p class="text-sm text-gray-500">06-12-2024</p>
+                                <a href="presentations/PP1_24-25J-209.pdf" download="PP1_Slides.pdf" class="mt-3 inline-block px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">
+                                    Download Slides
+                                </a>
+                            </div>
+
+                            <!-- Card -->
+                            <div class="bg-gray-50 shadow rounded-lg p-6 text-center flex flex-col items-center">
+                                <i class="bi bi-easel2 text-4xl text-blue-600 mb-3"></i>
+                                <h5 class="text-lg font-semibold text-gray-800">Progress Presentation 2</h5>
+                                <p class="text-sm text-gray-500">18-03-2025</p>
+                                <a href="presentations/Progress Presentation 2 - 24-25J-209.pdf" download="PP2_Slides.pdf" class="mt-3 inline-block px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">
+                                    Download Slides
+                                </a>
+                            </div>
+
+                            <!-- Card -->
+                            <div class="bg-gray-50 shadow rounded-lg p-6 text-center flex flex-col items-center">
+                                <i class="bi bi-easel3 text-4xl text-blue-600 mb-3"></i>
+                                <h5 class="text-lg font-semibold text-gray-800">Final Presentation</h5>
+                                <p class="text-sm text-gray-500">26-05-2024</p>
+                                <a href="#link-to-final-slides" download="Final_Slides.pptx" class="mt-3 inline-block px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">
+                                    Download Slides
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section id="about" class="flex flex-col items-center justify-center">
+                <section id="about" class="py-16">
+                    <div class="container mx-auto px-4">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl font-bold text-gray-800">About Us</h2>
+                            <p class="text-gray-600 mt-2">Meet the dedicated team behind the research.</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Member Card -->
+                            <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-xl transition duration-300">
+                                <img src="images/Dilmi.png" alt="Tharaki D.H.D" class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+                                <h4 class="text-lg font-semibold text-gray-800">Tharaki D.H.D</h4>
+                                <span class="text-sm text-blue-600">Associate Web Analytics</span>
+                                <p class="mt-2 text-sm text-gray-600">
+                                    <a href="mailto:it21254970@my.sliit.lk" class="text-blue-500 hover:underline">it21254970@my.sliit.lk</a>
+                                </p>
+                                <p class="mt-2 text-sm text-gray-600">BSc (Hons) in IT, Specializing in Data Science</p>
+                            </div>
+
+                            <!-- Placeholder Member -->
+                            <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-xl transition duration-300">
+                                <img src="images/member2.jpg" alt="[Member 2 Name]" class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+                                <h4 class="text-lg font-semibold text-gray-800">[Member 2 Name]</h4>
+                                <span class="text-sm text-blue-600">[Role 2]</span>
+                                <p class="mt-2 text-sm text-gray-600">
+                                    <a href="mailto:member2@example.com" class="text-blue-500 hover:underline">member2@example.com</a>
+                                </p>
+                                <p class="mt-2 text-sm text-gray-600">[Brief info or Achievements]</p>
+                            </div>
+
+                            <!-- Placeholder Member -->
+                            <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-xl transition duration-300">
+                                <img src="images/member3.jpg" alt="[Member 3 Name]" class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+                                <h4 class="text-lg font-semibold text-gray-800">[Member 3 Name]</h4>
+                                <span class="text-sm text-blue-600">[Role 3]</span>
+                                <p class="mt-2 text-sm text-gray-600">
+                                    <a href="mailto:member3@example.com" class="text-blue-500 hover:underline">member3@example.com</a>
+                                </p>
+                                <p class="mt-2 text-sm text-gray-600">[Brief info or Achievements]</p>
+                            </div>
+
+                            <!-- Member 4 -->
+                            <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-xl transition duration-300">
+                                <img src="images/Ama.png" alt="Pehesarani W.K.A" class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+                                <h4 class="text-lg font-semibold text-gray-800">Pehesarani W.K.A</h4>
+                                <span class="text-sm text-blue-600">Associate Data Scientist</span>
+                                <p class="mt-2 text-sm text-gray-600">
+                                    <a href="mailto:pehesaraniw.k.a@gmail.com" class="text-blue-500 hover:underline">pehesaraniw.k.a@gmail.com</a>
+                                </p>
+                                <p class="mt-2 text-sm text-gray-600">BSc (Hons) in IT, Specializing in Data Science</p>
+                            </div>
+
+                            <!-- Supervisor -->
+                            <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-xl transition duration-300">
+                                <img src="images/Supervisor.png" alt="Mr. Samadhi Chathuranga" class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+                                <h4 class="text-lg font-semibold text-gray-800">Mr. Samadhi Chathuranga</h4>
+                                <span class="text-sm text-blue-600">Lecturer</span>
+                                <p class="mt-2 text-sm text-gray-600">
+                                    <a href="mailto:samadhi.r@sliit.lk" class="text-blue-500 hover:underline">samadhi.r@sliit.lk</a>
+                                </p>
+                                <p class="mt-2 text-sm text-gray-600">Sri Lanka Institute of Information Technology</p>
+                            </div>
+
+                            <!-- Co-Supervisor -->
+                            <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-xl transition duration-300">
+                                <img src="images/Cosupervisor.png" alt="Ms. Thisara Shyamalee" class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+                                <h4 class="text-lg font-semibold text-gray-800">Ms. Thisara Shyamalee</h4>
+                                <span class="text-sm text-blue-600">Assistant Lecturer</span>
+                                <p class="mt-2 text-sm text-gray-600">
+                                    <a href="mailto:thisara.s@sliit.lk" class="text-blue-500 hover:underline">thisara.s@sliit.lk</a>
+                                </p>
+                                <p class="mt-2 text-sm text-gray-600">Sri Lanka Institute of Information Technology</p>
+                            </div>
+
+                            <!-- External Supervisor -->
+                            <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-xl transition duration-300">
+                                <img src="images/ExSupervisor.png" alt="Prof. Hemamali Perera" class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
+                                <h4 class="text-lg font-semibold text-gray-800">Prof. Hemamali Perera</h4>
+                                <span class="text-sm text-blue-600">Child & Adolescent Psychiatrist</span>
+                                <p class="mt-2 text-sm text-gray-600">Lady Ridgeway Children Hospital</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+            <section id="contact" class=" flex flex-col items-center justify-center">
+                <section id="contact" class="">
+                    <div class="container mx-auto px-4 max-w-4xl">
+                        <div class="mb-10 text-center">
+                            <h2 class="text-3xl font-semibold text-gray-800">Contact Us</h2>
+                            <p class="text-gray-600 mt-2">Get in touch with us for inquiries or collaborations.</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                            <div class="flex items-center space-x-4 bg-white p-6 rounded shadow">
+                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6"></path>
+                                    <path d="M5 10v10a1 1 0 001 1h3m10-11l2 2"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold text-lg text-gray-800">Our Location</h3>
+                                    <p class="text-gray-600">Sri Lanka Institute of Information Technology</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4 bg-white p-6 rounded shadow">
+                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 4h16v16H4z"></path>
+                                    <path d="M22 6L12 13 2 6"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold text-lg text-gray-800">Email Us</h3>
+                                    <p class="text-blue-600"><a href="mailto:learnmate24@gmail.com">learnmate24@gmail.com</a></p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4 bg-white p-6 rounded shadow">
+                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13 1.21.38 2.4.74 3.54a2 2 0 01-.45 2.11L9.91 10a16 16 0 006 6l1.63-1.63a2 2 0 012.11-.45c1.14.36 2.33.61 3.54.74a2 2 0 011.72 2z"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold text-lg text-gray-800">Call Us</h3>
+                                    <p class="text-blue-600"><a href="tel:+94760589370">+94 760 589 370</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form action="https://formsubmit.co/learnmate24@gmail.com" method="POST" class="bg-white p-8 rounded shadow max-w-2xl mx-auto">
+                            <input type="hidden" name="_subject" value="New message from Research Portfolio!" />
+                            <input type="hidden" name="_captcha" value="false" />
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <input type="text" name="name" placeholder="Your Name" required class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                                <input type="email" name="email" placeholder="Your Email" required class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                            </div>
+
+                            <input type="text" name="subject" placeholder="Subject" required class="w-full mt-6 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+                            <textarea name="message" rows="5" placeholder="Message" required class="w-full mt-6 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+
+                            <div class="mt-6 text-center">
+                                <button type="submit" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded hover:bg-blue-700 transition">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+            </section>
+        </main>
+
+        <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4 mt-12">
+            <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+                <div class="sm:flex sm:items-center sm:justify-between">
+                    <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                        <img src="assets/img/mi logo dark.png" class="h-8" alt="miStudy Logo" />
+                        <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
+                    </a>
+                    <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                        <li>
+                            <a href="#" class="hover:underline me-4 md:me-6">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+                <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://flowbite.com/" class="hover:underline">MiStudy.online</a>. All Rights Reserved.</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- <div id="box" class="w-32 h-32 bg-blue-500 rounded-lg shadow-lg"></div> -->
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Alpine.js for Accordion Toggle -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <!-- Your custom JS -->
+    <script src="app.js"></script>
+    <script>
+        // Navbar mobile menu toggle logic
+        const openMenuBtn = document.getElementById('open-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        openMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Scroll to section and set active on click
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute('href')));
+        const navbar = document.querySelector('header');
+        function getOffset() {
+            return navbar ? navbar.offsetHeight : 0;
+        }
+        navLinks.forEach((link, i) => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetSection = sections[i];
+                const offset = getOffset();
+                const top = targetSection.offsetTop - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                // Close mobile menu if open
+                if (window.innerWidth < 1024) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav-link.active,
+        .nav-link.active:hover {
+            color: #6366f1;
+            /* Tailwind indigo-600 */
+            font-weight: bold;
+        }
+
+        /* Animated Gradient Glow Background */
+        .animated-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            background: radial-gradient(ellipse 80% 60% at 20% 30%, #eef5ff 0%, transparent 70%),
+                        radial-gradient(ellipse 60% 40% at 80% 70%, #ffe6ff 0%, transparent 70%),
+                        radial-gradient(ellipse 60% 60% at 60% 20%, #eafffa 0%, transparent 70%);
+            opacity: 0.6;
+            animation: bgGlowMove 3s ease-in-out infinite alternate;
+        }
+        @keyframes bgGlowMove {
+            0% {
+                background-position:
+                    20% 30%,
+                    80% 70%,
+                    60% 20%;
+            }
+            50% {
+                background-position:
+                    30% 40%,
+                    70% 60%,
+                    50% 30%;
+            }
+            100% {
+                background-position:
+                    20% 30%,
+                    80% 70%,
+                    60% 20%;
+            }
+        }
+        body > *:not(.animated-bg) {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+
+    <!-- Sections for each navbar item -->
+
+</body>
+
+</html>

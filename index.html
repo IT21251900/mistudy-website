@@ -46,7 +46,7 @@
                     <a href="#domain" class="nav-link text-sm/6 font-semibold text-gray-900">Domain</a>
                     <a href="#milestones" class="nav-link text-sm/6 font-semibold text-gray-900">Milestones</a>
                     <a href="#documents" class="nav-link text-sm/6 font-semibold text-gray-900">Documents</a>
-                    <a href="#slides" class="nav-link text-sm/6 font-semibold text-gray-900">Slides of past presentations</a>
+                    <a href="#slides" class="nav-link text-sm/6 font-semibold text-gray-900">Presentations</a>
                     <a href="#about" class="nav-link text-sm/6 font-semibold text-gray-900">About us</a>
                     <a href="#contact" class="nav-link text-sm/6 font-semibold text-gray-900">Contact us</a>
                 </div>
@@ -126,94 +126,124 @@
                         <div x-data="{ selected: 1 }" class="space-y-4 max-w-4xl mx-auto">
                             <!-- Accordion Item 1 -->
                             <div class="border border-gray-300 rounded-lg overflow-hidden">
-                                <button @click="selected === 1 ? selected = null : selected = 1" class="flex items-center w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition">
+                                <button @click="selected === 1 ? selected = null : selected = 1" class="flex items-center w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition">
                                     <i class="bi bi-book text-lg mr-2"></i>
                                     <span class="text-gray-800 font-semibold">Literature Survey</span>
                                 </button>
                                 <div x-show="selected === 1" x-collapse class="px-6 py-4 bg-white text-gray-600">
-                                    Our survey highlights:
-
-                                    Traditional LMS limitations: rigidity, lack of personalization, static content.
-
-                                    The emergence of AI in education: adaptive learning, intelligent tutoring systems, stealth assessments.
-
-                                    Cognitive strategies like the Pomodoro technique, mind mapping, and cognitive load theory.
-
-                                    Gaps in integrating real-time feedback, dynamic quizzes, and intelligent session tracking.
+                                    <div class="">Advancements in Learning Management Systems (LMS) have transformed them from static content platforms into adaptive, AI-driven environments that personalize learning through intelligent tutoring, real-time chatbot support, and innovative strategies like mind mapping and cognitive-aware time management. Research highlights the efficacy of AI in creating adaptive learning paths and stealth assessments to enhance retention and reduce test anxiety [1][2], while chatbots address delayed feedback, though often limited by scripted responses [3][4]. Visual tools like mind mapping improve conceptual understanding but lack real-time adaptability in most LMS platforms. Techniques such as the Pomodoro method show promise in optimizing study focus, yet dynamic time management based on cognitive load remains underdeveloped. This study aims to develop an Adaptive Learner-Centric LMS integrating AI-driven mind mapping, real-time chat support, and cognitive-aware time management to deliver a highly personalized and effective educational experience.</div>
+                                    <small class="block mt-4 text-xs text-gray-400">
+                                        [1] <a href="https://www.sciencedirect.com/science/article/pii/S0957417407001236" target="_blank">Chen, Chih-Ming, and Ling-Jiun Duh. "Personalized web-based tutoring system based on fuzzy item response theory." Expert systems with applications 34, no. 4 (2008): 2298-2315.</a><br>
+                                        [2] <a href="https://journals.aom.org/doi/abs/10.5465/AMBPP.2018.15903abstract" target="_blank">Winkler, Rainer, and Matthias Söllner. "Unleashing the potential of chatbots in education: A state-of-the-art analysis." Academy of management proceedings, vol. 2018, no. 1, p. 15903. (2018).</a><br>
+                                        [3] <a href="https://ieeexplore.ieee.org/abstract/document/6272922/" target="_blank">Kudelić, Robert, Mirko Maleković, and Alen Lovrenčić. "Mind map generator software." 2012 IEEE International Conference on Computer Science and Automation Engineering (CSAE), vol. 3, pp. 123-127. IEEE, 2012.</a><br>
+                                        [4] <a href="https://link.springer.com/article/10.3758/bf03193412" target="_blank">Sanchez, Christopher A., and Jennifer Wiley. "An examination of the seductive details effect in terms of working memory capacity." Memory & cognition 34 (2006): 344-355.</a>
+                                    </small>
                                 </div>
                             </div>
 
                             <!-- Accordion Item 2 -->
                             <div class="border border-gray-300 rounded-lg overflow-hidden">
-                                <button @click="selected === 2 ? selected = null : selected = 2" class="flex items-center w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition">
+                                <button @click="selected === 2 ? selected = null : selected = 2" class="flex items-center w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition">
                                     <i class="bi bi-search text-lg mr-2"></i>
                                     <span class="text-gray-800 font-semibold">Research Gap</span>
                                 </button>
                                 <div x-show="selected === 2" x-collapse class="px-6 py-4 bg-white text-gray-600">
-                                    [Explain the identified research gap concerning ASD children. What specific areas need more exploration or new approaches?]
+                                    Current research on adaptive Learning Management Systems (LMS) reveals significant gaps in achieving fully personalized and dynamic learning experiences, particularly in integrating the Pomodoro Technique, adaptive quizzes, dynamic mind maps, resource linking, scalable systems, and user-friendly interfaces. The underutilization of the Pomodoro Technique limits structured study and cognitive load management, while static quiz banks and mind maps fail to adapt to individual learning patterns, engagement, or real-time progress. Resource linking in most LMS platforms remains basic, lacking contextual relevance and integration into personalized knowledge maps. Additionally, dynamic learning pathways that adjust to emotional and cognitive states are underdeveloped, and scalability challenges hinder the application of adaptive systems across diverse student populations. Poor user experience (UX) and complex interfaces further impede effective engagement. Addressing these gaps through AI-driven, customizable features and intuitive design is essential to enhance student engagement, retention, and learning outcomes.
                                 </div>
                             </div>
 
                             <!-- Accordion Item 3 -->
                             <div class="border border-gray-300 rounded-lg overflow-hidden">
-                                <button @click="selected === 3 ? selected = null : selected = 3" class="flex items-center w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition">
+                                <button @click="selected === 3 ? selected = null : selected = 3" class="flex items-center w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition">
                                     <i class="bi bi-question-circle text-lg mr-2"></i>
-                                    <span class="text-gray-800 font-semibold">Research Problem</span>
+                                    <span class="text-gray-800  font-semibold">Research Problem</span>
                                 </button>
                                 <div x-show="selected === 3" x-collapse class="px-6 py-4 bg-white text-gray-600 space-y-2">
-                                    The lack of knowledge among peers and parents surrounding autism means misguidance, poor support, and barriers to socialization for the autistic child...
+                                    This research addresses the limitations of traditional Learning Management Systems (LMS) by proposing an AI-driven Adaptive Learner-Centric LMS designed to personalize the learning experience based on individual student needs. Current LMS platforms lack dynamic features such as personalized learning paths, intelligent feedback, real-time progress tracking, and integration of AI-powered tools like adaptive mind maps, personalized quizzes, and Pomodoro techniques. The research aims to overcome these challenges by integrating technologies such as Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) to develop intelligent systems for adaptive content generation, context-aware resource linking, and productivity-aligned study sessions. By focusing on the personalization, integration, and scalability of these tools, the proposed solution seeks to enhance student engagement, knowledge retention, and overall learning efficiency.
                                 </div>
                             </div>
 
                             <!-- Accordion Item 4 -->
                             <div class="border border-gray-300 rounded-lg overflow-hidden">
-                                <button @click="selected === 4 ? selected = null : selected = 4" class="flex items-center w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition">
+                                <button @click="selected === 4 ? selected = null : selected = 4" class="flex items-center w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100  transition">
                                     <i class="bi bi-bullseye text-lg mr-2"></i>
                                     <span class="text-gray-800 font-semibold">Research Objectives</span>
                                 </button>
                                 <div x-show="selected === 4" x-collapse class="px-6 py-4 bg-white text-gray-600 space-y-3">
-                                    <ul class="list-decimal ml-5 space-y-2">
+                                    <ol class="list-decimal ml-5 space-y-2">
                                         <li>
-                                            <strong>Understand How Autistic Children Learn</strong> – LearnMate aims to deeply understand how autistic children take in, process, and act on information across four domains...
+                                            <strong>Pomodoro Technique Integration</strong><br>
+                                            Implement AI-powered Pomodoro timers tailored to individual study habits and focus cycles.<br>
+                                            Enhance productivity and reduce cognitive fatigue through personalized work-break schedules.<br>
+                                            Integrate the Pomodoro tool seamlessly within the LMS interface for real-time session management.
                                         </li>
                                         <li>
-                                            <strong>Design Personalized Learning Plans</strong> – Using behavioral data and engagement tracking...
+                                            <strong>Adaptive Mind Map Generation</strong><br>
+                                            Develop AI-generated, personalized mind maps using LLMs and prompt engineering techniques.<br>
+                                            Use Retrieval-Augmented Generation (RAG) to extract relevant content from PDFs, lecture notes, and external resources.<br>
+                                            Dynamically update mind maps based on student progress, quiz performance, and learning topics.<br>
+                                            Enable context-aware resource linking within mind map nodes for enriched, focused study.
                                         </li>
                                         <li>
-                                            <strong>Support Differentiated Instruction</strong> – Teachers and caregivers receive targeted tools...
+                                            <strong>AI-Powered Document Assistant</strong><br>
+                                            Provide a real-time conversational interface for querying uploaded documents.<br>
+                                            Summarize document content and deliver contextual answers to user questions.<br>
+                                            Bridge static document resources with interactive, AI-driven engagement.<br>
+                                            Support multimodal inputs (e.g., PDF, text) and maintain relevance to active learning tasks.
                                         </li>
                                         <li>
-                                            <strong>Ensure Flexibility Across Environments</strong> – LearnMate's plans are modular and portable...
+                                            <strong>Personalized Quiz Generation and Feedback</strong><br>
+                                            Implement a dynamic quiz system that adapts to user performance and knowledge gaps.<br>
+                                            Analyze past quiz data to generate targeted questions and feedback.<br>
+                                            Guide learners to focus on weak areas with intelligent, real-time insights.<br>
+                                            Integrate quiz modules with mind maps and the learning dashboard for cohesive learning flow.
                                         </li>
-                                        <li>
-                                            <strong>Empower and Train Educators</strong> – Teachers get the training and technology they need...
-                                        </li>
-                                        <li>
-                                            <strong>Respect the Rights and Dignity of Children</strong> – All interventions are child-centered...
-                                        </li>
-                                    </ul>
+                                    </ol>
                                 </div>
                             </div>
 
                             <!-- Accordion Item 5 -->
                             <div class="border border-gray-300 rounded-lg overflow-hidden">
-                                <button @click="selected === 5 ? selected = null : selected = 5" class="flex items-center w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition">
+                                <button @click="selected === 5 ? selected = null : selected = 5" class="flex items-center w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition">
                                     <i class="bi bi-gear text-lg mr-2"></i>
                                     <span class="text-gray-800 font-semibold">Methodology</span>
                                 </button>
-                                <div x-show="selected === 5" x-collapse class="px-6 py-4 bg-white text-gray-600">
-                                    [Describe the research methodology. Will you be working with children, educators, parents? What methods will be used for data collection and analysis specific to ASD research?]
+                                <div x-show="selected === 5" x-collapse class="px-6 py-4 bg-white text-gray-600 space-y-4">
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">Requirement Gathering</h4>
+                                        <ul class="list-disc ml-6 space-y-1">
+                                            <li><strong>Stakeholder Engagement:</strong> Requirements were gathered through interviews, surveys, and focus groups with students, educators, and curriculum designers to address real-world academic needs, emphasizing personalization, engagement, and self-paced learning.</li>
+                                            <li><strong>Past Research Analysis:</strong> A literature review on LLMs, RAG, and mind mapping tools identified strengths (e.g., personalized learning paths) and gaps (e.g., limited adaptability) in existing systems, guiding the selection of techniques for content parsing, quiz adaptation, and mind map generation.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">Development</h4>
+                                       <ul class="list-disc ml-6 space-y-1">
+                                            <li><strong>Pomodoro Scheduler:</strong> Utilizes a time-series forecasting model with LSTM to predict optimal study/break intervals based on user engagement patterns.</li>
+                                            <li><strong>Document Assistant:</strong> Combines BERT and RAG for semantic text extraction and context-aware question answering from uploaded PDFs.</li>
+                                            <li><strong>Mind Map Generation:</strong> Employs LLM-based prompt engineering with Mermaid libraries to create hierarchical mind maps from document topics and quiz performance.</li>
+                                            <li><strong>Quiz Generation:</strong> Integrates Bloom’s Taxonomy with a LLM model to generate adaptive quizzes targeting cognitive levels.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">Deployment/Integration</h4>
+                                        <p>Dockerized Node.js backend and Angular frontend, orchestrated via AWS and GitHub Actions for CI/CD, with MongoDB for data management.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 mb-1">Evaluation and Testing</h4>
+                                        <p>The evaluation and testing phase ensures the LMS and its hybrid models (LLMs, RAG, and adaptive components) meet performance, usability, and educational objectives. A comprehensive testing strategy assesses both technical accuracy and user satisfaction.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Accordion Item 6 -->
                             <div class="border border-gray-300 rounded-lg overflow-hidden">
-                                <button @click="selected === 6 ? selected = null : selected = 6" class="flex items-center w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition">
+                                <button @click="selected === 6 ? selected = null : selected = 6" class="flex items-center w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition">
                                     <i class="bi bi-code-slash text-lg mr-2"></i>
                                     <span class="text-gray-800 font-semibold">Technologies Used</span>
                                 </button>
                                 <div x-show="selected === 6" x-collapse class="px-6 py-4 bg-white text-gray-600">
-                                    [List and briefly explain any specific technologies, software, or assessment tools relevant to your ASD research project.]
+                                    <img src="assets/img/tools.png" alt="Tech Stack" class="w-full max-w-2xl mx-auto rounded-lg shadow-lg">
                                 </div>
                             </div>
                         </div>
@@ -345,76 +375,136 @@
                         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                             <!-- Document Card -->
                             <div class="bg-white shadow rounded-lg p-6 flex items-start space-x-4">
-                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v2.25A2.25 2.25 0 0117.25 18.75H6.75A2.25 2.25 0 014.5 16.5v-9A2.25 2.25 0 016.75 5.25h2.75m3.25 0h4a2 2 0 012 2v2m0 0l-6 6m6-6V9m0 0H12">
-                                    </path>
-                                </svg>
                                 <div>
                                     <h5 class="text-lg font-semibold text-gray-800">Topic Assessment Form</h5>
                                     <p class="text-sm text-green-600 mb-2">Completed</p>
-                                    <a href="documents/TAF-24-25J-112.pdf" download="TAF-24-25J-112.pdf" class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
+                                    <div>
+
+                                    <button onclick="window.open('documents/TAF-24-25J-112.pdf', '_blank')" type="button" class="inline-block px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">
+                                        View PDF
+                                    </button>
+                                     <a href="documents/TAF-24-25J-112.pdf" download="TAF-24-25J-112.pdf" class="ml-2  inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
                                         Download
                                     </a>
+                                    <p class="text-xs text-gray-400 mt-2">If the file opens in your browser, right-click the button and choose "Save link as..."</p>
+                                </div>
                                 </div>
                             </div>
 
                             <!-- Document Card -->
                             <div class="bg-white shadow rounded-lg p-6 flex items-start space-x-4">
-                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 3.75h15a.75.75 0 01.75.75v15a.75.75 0 01-.75.75h-15a.75.75 0 01-.75-.75v-15a.75.75 0 01.75-.75zM9 6.75v10.5M15 6.75v10.5">
-                                    </path>
-                                </svg>
                                 <div>
                                     <h5 class="text-lg font-semibold text-gray-800">Proposal Document</h5>
                                     <p class="text-sm text-green-600 mb-2">Completed</p>
-                                    <a href="documents/Project_Proposal_Documents.zip" download="Project_Proposal_Documents.zip" class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
-                                        Download
-                                    </a>
+                                    <ul class="space-y-2">
+                                        <li class="flex items-center justify-between">
+                                            <span class="font-medium">IT21249266</span>
+                                            <span>
+                                                <button onclick="window.open('documents/Project_Proposal_Documents/IT21249266 - Project Proposal.pdf', '_blank')" type="button" class="ml-2 inline-block px-3 py-1 text-xs font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">View</button>
+                                                <a href="documents/Project_Proposal_Documents/IT21249266 - Project Proposal.pdf" download class="ml-1 inline-block px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">Download</a>
+                                            </span>
+                                        </li>
+                                        <li class="flex items-center justify-between">
+                                            <span class="font-medium">IT21251900 </span>
+                                            <span>
+                                                <button onclick="window.open('documents/Project_Proposal_Documents/IT21251900 - Project Proposal.pdf', '_blank')" type="button" class="ml-2 inline-block px-3 py-1 text-xs font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">View</button>
+                                                <a href="documents/Project_Proposal_Documents/IT21251900 - Project Proposal.pdf" download class="ml-1 inline-block px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">Download</a>
+                                            </span>
+                                        </li>
+                                        <li class="flex items-center justify-between">
+                                            <span class="font-medium">IT21302862 </span>
+                                            <span>
+                                                <button onclick="window.open('documents/Project_Proposal_Documents/IT21302862 - Project Proposal.pdf', '_blank')" type="button" class="ml-2 inline-block px-3 py-1 text-xs font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">View</button>
+                                                <a href="documents/Project_Proposal_Documents/IT21302862 - Project Proposal.pdf" download class="ml-1 inline-block px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">Download</a>
+                                            </span>
+                                        </li>
+                                        <li class="flex items-center justify-between">
+                                            <span class="font-medium">IT21360428 </span>
+                                            <span>
+                                                <button onclick="window.open('documents/Project_Proposal_Documents/IT21360428 - Project Proposal .pdf', '_blank')" type="button" class="ml-2 inline-block px-3 py-1 text-xs font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">View</button>
+                                                <a href="documents/Project_Proposal_Documents/IT21360428 - Project Proposal .pdf" download class="ml-1 inline-block px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">Download</a>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <p class="text-xs text-gray-400 mt-2">If the file opens in your browser, right-click the button and choose 'Save link as...'</p>
                                 </div>
                             </div>
 
                             <!-- Document Card -->
                             <div class="bg-white shadow rounded-lg p-6 flex items-start space-x-4">
-                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.25v13.5M8.25 12h7.5M12 8.25v7.5M3.75 5.25h16.5v13.5H3.75z">
-                                    </path>
-                                </svg>
-                                <div>
-                                    <h5 class="text-lg font-semibold text-gray-800">Check List Documents</h5>
-                                    <p class="text-sm text-green-600 mb-2">Completed</p>
-                                    <a href="documents/Check_List_Documents.zip" download="Checklist_Documents.zip" class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
-                                        Download
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Document Card -->
-                            <div class="bg-white shadow rounded-lg p-6 flex items-start space-x-4">
-                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75h9a.75.75 0 01.75.75v15a.75.75 0 01-.75.75h-9a.75.75 0 01-.75-.75V4.5a.75.75 0 01.75-.75zM9 7.5h6M9 12h6M9 16.5h6">
-                                    </path>
-                                </svg>
                                 <div>
                                     <h5 class="text-lg font-semibold text-gray-800">Final Reports</h5>
                                     <p class="text-sm text-green-600 mb-2">Completed</p>
-                                    <a href="documents/Final_Reports.zip" download="Final_Reports.zip" class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
-                                        Download
-                                    </a>
+                                    <ul class="space-y-2">
+                                        <li class="flex items-center justify-between">
+                                            <span class="font-medium">Group Final Report</span>
+                                            <span>
+                                                <button onclick="window.open('documents/Final_Reports/24-25J-112_Final_Report.pdf', '_blank')" type="button" class="ml-2 inline-block px-3 py-1 text-xs font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">View</button>
+                                                <a href="documents/Final_Reports/24-25J-112_Final_Report.pdf" download class="ml-1 inline-block px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">Download</a>
+                                            </span>
+                                        </li>
+                                        <hr>
+                                        <li class="flex items-center justify-between">
+                                            <span class="font-medium">IT21249266</span>
+                                            <span>
+                                                <button onclick="window.open('documents/Final_Reports/IT21249266 - Final Report.pdf', '_blank')" type="button" class="ml-2 inline-block px-3 py-1 text-xs font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">View</button>
+                                                <a href="documents/Final_Reports/IT21249266 - Final Report.pdf" download class="ml-1 inline-block px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">Download</a>
+                                            </span>
+                                        </li>
+                                        <li class="flex items-center justify-between">
+                                            <span class="font-medium">IT21251900</span>
+                                            <span>
+                                                <button onclick="window.open('documents/Final_Reports/IT21251900 - Final Report.pdf', '_blank')" type="button" class="ml-2 inline-block px-3 py-1 text-xs font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">View</button>
+                                                <a href="documents/Final_Reports/IT21251900 - Final Report.pdf" download class="ml-1 inline-block px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">Download</a>
+                                            </span>
+                                        </li>
+                                        <li class="flex items-center justify-between">
+                                            <span class="font-medium">IT21302862</span>
+                                            <span>
+                                                <button onclick="window.open('documents/Final_Reports/IT21302862 - Final Report.pdf', '_blank')" type="button" class="ml-2 inline-block px-3 py-1 text-xs font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">View</button>
+                                                <a href="documents/Final_Reports/IT21302862 - Final Report.pdf" download class="ml-1 inline-block px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">Download</a>
+                                            </span>
+                                        </li>
+                                        <li class="flex items-center justify-between">
+                                            <span class="font-medium">IT21360428</span>
+                                            <span>
+                                                <button onclick="window.open('documents/Final_Reports/IT21360428 - Final Report.pdf', '_blank')" type="button" class="ml-2 inline-block px-3 py-1 text-xs font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">View</button>
+                                                <a href="documents/Final_Reports/IT21360428 - Final Report.pdf" download class="ml-1 inline-block px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">Download</a>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <p class="text-xs text-gray-400 mt-2">If the file opens in your browser, right-click the button and choose "Save link as..."</p>
                                 </div>
                             </div>
 
                             <!-- Document Card -->
                             <div class="bg-white shadow rounded-lg p-6 flex items-start space-x-4">
-                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                <!-- <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3.75h10.5a.75.75 0 01.75.75v15a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75v-15a.75.75 0 01.75-.75zM9 6.75h6M9 12h6M9 16.5h3">
                                     </path>
-                                </svg>
+                                </svg> -->
                                 <div>
                                     <h5 class="text-lg font-semibold text-gray-800">Research Paper</h5>
                                     <p class="text-sm text-green-600 mb-2">Completed</p>
-                                    <a href="documents/24-25J-112-Research-Paper.pdf" class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
+                                    
+                                    <button onclick="window.open('documents/24-25J-112-Research-Paper.pdf', '_blank')" type="button" class="inline-block px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">
+                                        View PDF
+                                    </button>
+                                     <a href="documents/24-25J-112-Research-Paper.pdf" download class="ml-2  inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
                                         Download
                                     </a>
+                                    <p class="text-xs text-gray-400 mt-2">If the file opens in your browser, right-click the button and choose "Save link as..."</p>
+                                </div>
+                            </div>
+
+                            <!-- Document Card -->
+                            <div class="bg-white shadow rounded-lg p-6 flex items-start space-x-4">
+                                <div>
+                                    <h5 class="text-lg font-semibold text-gray-800">Check List Documents</h5>
+                                    <p class="text-sm text-yellow-500 mb-2">Pending</p>
+                                    <!-- <a href="documents/Check_List_Documents.zip" download="Checklist_Documents.zip" class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700 transition">
+                                        Download
+                                    </a> -->
                                 </div>
                             </div>
                         </div>
@@ -436,9 +526,14 @@
                                 <i class="bi bi-easel text-4xl text-blue-600 mb-3"></i>
                                 <h5 class="text-lg font-semibold text-gray-800">Proposal Presentation</h5>
                                 <!-- <p class="text-sm text-gray-500">09-08-2024</p> -->
-                                <a href="documents/Proposal_Presentation_Adaptive_Learner_Centric_LMS.pptx" download="Proposal_Presentation_Adaptive_Learner_Centric_LMS.pptx" class="mt-3 inline-block px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">
+                                 <div class="flex flex-row gap-3 items-center justify-center mt-3">
+                                <a href="documents/Proposal_Presentation_Adaptive_Learner_Centric_LMS.pptx" download="Proposal_Presentation_Adaptive_Learner_Centric_LMS.pptx" class="inline-block px-4 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">
                                     Download Slides
                                 </a>
+                                <a target="_blank" href="https://www.canva.com/design/DAGXXlmiRac/wI9sKcAKLc6NIGD7GvudMw">
+                                    <img src="assets/img/canva.webp" class="w-10 h-10" alt="">
+                                </a>
+                                </div>
                             </div>
 
                             <!-- Card -->
@@ -499,45 +594,48 @@
                             <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-xl transition duration-300">
                                 <img src="images/sanjana.png" alt="Sanjana" class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
                                 <h4 class="text-lg font-semibold text-gray-800">R.M.S.D Rajapaksha</h4>
-                                <span class="text-sm text-blue-600">UX Engineer | Software Engineer</span>
+                                <span class="text-sm text-blue-600">Undergraduate</span>
                                 </span>
+                                <p class="mt-2 text-sm text-gray-600">BSc (Hons) in IT, Specializing in Software Engineering</p>
                                 <p class="mt-2 text-sm text-gray-600">
                                     <a href="mailto:it21254970@my.sliit.lk" class="text-blue-500 hover:underline">it21251900@my.sliit.lk</a>
                                 </p>
-                                <p class="mt-2 text-sm text-gray-600">BSc (Hons) in IT, Specializing in Software Engineering</p>
+                                
                             </div>
 
                             <!-- Placeholder Member -->
                             <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-xl transition duration-300">
                                 <img src="images/russell.jpg" alt="Russell" class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
                                 <h4 class="text-lg font-semibold text-gray-800">Peiris A R D</h4>
-                                <span class="text-sm text-blue-600">Site Reliability Engineering Intern</span>
+                                <span class="text-sm text-blue-600">Undergraduate</span>
+                                <p class="mt-2 text-sm text-gray-600">BSc (Hons) in IT, Specializing in Software Engineering</p>
                                 <p class="mt-2 text-sm text-gray-600">
                                     <a href="mailto:member2@example.com" class="text-blue-500 hover:underline">it21249266@my.sliit.lk</a>
                                 </p>
-                                <p class="mt-2 text-sm text-gray-600">BSc (Hons) in IT, Specializing in Software Engineering</p>
+                                
                             </div>
 
                             <!-- Placeholder Member -->
                             <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-xl transition duration-300">
                                 <img src="images/sanaya.png" alt="[Member 3 Name]" class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
                                 <h4 class="text-lg font-semibold text-gray-800">L.A.S.S Sri Samadhi</h4>
-                                <span class="text-sm text-blue-600">Associate Software Engineer</span>
+                                <span class="text-sm text-blue-600">Undergraduate</span>
+                                <p class="mt-2 text-sm text-gray-600">BSc (Hons) in IT, Specializing in Software Engineering</p>
                                 <p class="mt-2 text-sm text-gray-600">
                                     <a href="mailto:member3@example.com" class="text-blue-500 hover:underline">it21302862@my.sliit.lk</a>
                                 </p>
-                                <p class="mt-2 text-sm text-gray-600">BSc (Hons) in IT, Specializing in Software Engineering</p>
                             </div>
 
                             <!-- Member 4 -->
                             <div class="bg-white shadow-lg rounded-xl p-6 text-center hover:shadow-xl transition duration-300">
                                 <img src="images/monali.png" alt="monali" class="w-28 h-28 mx-auto rounded-full object-cover mb-4">
                                 <h4 class="text-lg font-semibold text-gray-800">G.M.N Monali </h4>
-                                <span class="text-sm text-blue-600">Software Engineering Intern</span>
+                                <span class="text-sm text-blue-600">Undergraduate</span>
+                                <p class="mt-2 text-sm text-gray-600">BSc (Hons) in IT, Specializing in Software Engineering</p>
                                 <p class="mt-2 text-sm text-gray-600">
                                     <a href="mailto:pehesaraniw.k.a@gmail.com" class="text-blue-500 hover:underline">it21360428@my.sliit.lk</a>
                                 </p>
-                                <p class="mt-2 text-sm text-gray-600">BSc (Hons) in IT, Specializing in Software Engineering</p>
+                                
                             </div>
 
                             <!-- Supervisor -->
@@ -558,7 +656,7 @@
                                 <span class="text-sm text-blue-600">Senior Lecturer</span>
                                 <p class="mt-2 text-sm text-gray-600">Sri Lanka Institute of Information Technology</p>
                                 <p class="mt-2 text-sm text-gray-600">
-                                    <a href="mailto:thisara.s@sliit.lk" class="text-blue-500 hover:underline">thisara.s@sliit.lk</a>
+                                    <a href="mailto:thilini.j@sliit.lk" class="text-blue-500 hover:underline">thilini.j@sliit.lk</a>
                                 </p>
 
                             </div>
